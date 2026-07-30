@@ -1,0 +1,187 @@
+/* ===========================
+   Container
+=========================== */
+
+.container {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* ===========================
+   Themes
+=========================== */
+
+.container.dark {
+    background: linear-gradient(135deg,
+            #050816,
+            #0F172A,
+            #1E3A8A);
+}
+
+.container.light {
+    background: linear-gradient(135deg,
+            #F8FAFC,
+            #E2E8F0,
+            #CBD5E1);
+}
+
+/* ===========================
+   Hero Section
+=========================== */
+
+.dashboard-content {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding-top: 100px;
+
+    padding-left: 40px;
+    padding-right: 40px;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+.dashboard-content h1 {
+    font-size: 52px;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.container.dark .dashboard-content h1 {
+    color: white;
+}
+
+.container.light .dashboard-content h1 {
+    color: #111827;
+}
+
+.dashboard-content p {
+    font-size: 20px;
+    max-width: 700px;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+.container.dark .dashboard-content p {
+    color: #CBD5E1;
+}
+
+.container.light .dashboard-content p {
+    color: #374151;
+}
+
+/* ===========================
+   Start Button
+=========================== */
+
+.start-btn {
+    padding: 16px 38px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: #2563EB;
+    color: white;
+
+    font-size: 18px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all .3s ease;
+}
+
+.start-btn:hover {
+    background: #1D4ED8;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(37, 99, 235, .35);
+}
+
+/* ===========================
+   Animated Background
+=========================== */
+
+.background-icons {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.bg-icon {
+    position: absolute;
+    color: #3B82F6;
+    filter: drop-shadow(0 0 6px #2563EB);
+    animation: diagonalMove linear infinite;
+}
+
+@keyframes diagonalMove {
+
+    0% {
+        transform: translate(-200px, 200px) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(120vw, -120vh) rotate(360deg);
+    }
+
+}
+
+/* ===========================
+   Theme Toggle
+=========================== */
+
+.container .theme-toggle {
+    position: fixed;
+
+    top: 95px;
+    right: 20px;
+
+    width: 55px;
+    height: 55px;
+
+    border: none;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 1100;
+}
+.container.dark .theme-toggle {
+    background: #1E293B;
+    color: #FFD43B;
+}
+
+.container.light .theme-toggle {
+    background: white;
+    color: #2563EB;
+}
+
+.container .theme-toggle:hover {
+    transform: rotate(180deg) scale(1.1);
+    box-shadow: 0 0 18px rgba(59, 130, 246, .4);
+}

@@ -1,0 +1,168 @@
+/* ==========================
+   Laptop Info Panel
+========================== */
+
+.info-panel {
+    position: fixed;
+    top: 80px;
+    left: 280px;
+
+    width: 420px;
+    height: calc(100vh - 80px);
+
+    padding: 30px;
+
+    overflow-y: auto;
+
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    transition: all .35s ease;
+
+    z-index: 4000;
+
+    border-radius: 0 18px 18px 0;
+
+    box-shadow: 8px 0 30px rgba(0, 0, 0, .15);
+}
+
+/* ==========================
+   Dark Theme
+========================== */
+
+.info-panel.dark {
+    background: rgba(255, 255, 255, .22);
+    color: white;
+    border-right: 1px solid rgba(255, 255, 255, .15);
+}
+
+.info-panel.dark h1,
+.info-panel.dark h3 {
+    color: white;
+}
+
+.info-panel.dark p,
+.info-panel.dark li {
+    color: #E5E7EB;
+}
+
+/* ==========================
+   Light Theme
+========================== */
+
+.info-panel.light {
+    background: rgba(255, 255, 255, .85);
+    color: #111827;
+    border-right: 1px solid rgba(0, 0, 0, .08);
+}
+
+.info-panel.light h1,
+.info-panel.light h3 {
+    color: #111827;
+}
+
+.info-panel.light p,
+.info-panel.light li {
+    color: #374151;
+}
+
+/* ==========================
+   Heading
+========================== */
+
+.info-panel h1 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 18px;
+    border-bottom: 2px solid #2563EB;
+    padding-bottom: 12px;
+}
+
+/* ==========================
+   Description
+========================== */
+
+.info-panel p {
+    line-height: 1.8;
+    margin-bottom: 18px;
+    font-size: 15px;
+}
+
+/* ==========================
+   Section Heading
+========================== */
+
+.info-panel h3 {
+    margin-top: 28px;
+    margin-bottom: 14px;
+
+    font-size: 18px;
+    font-weight: 600;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.info-panel h3::before {
+    content: "";
+    width: 6px;
+    height: 22px;
+    background: #2563EB;
+    border-radius: 20px;
+}
+
+/* ==========================
+   Lists
+========================== */
+
+.info-panel ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.info-panel li {
+    margin-bottom: 12px;
+
+    padding: 12px 16px;
+
+    border-radius: 12px;
+
+    transition: .25s ease;
+}
+
+/* Dark */
+
+.info-panel.dark li {
+    background: rgba(255, 255, 255, .08);
+}
+
+/* Light */
+
+.info-panel.light li {
+    background: rgba(37, 99, 235, .06);
+}
+
+.info-panel li:hover {
+    transform: translateX(8px);
+    background: #2563EB;
+    color: white;
+}
+
+/* ==========================
+   Scrollbar
+========================== */
+
+.info-panel::-webkit-scrollbar {
+    width: 8px;
+}
+
+.info-panel::-webkit-scrollbar-thumb {
+    background: #2563EB;
+    border-radius: 20px;
+}
+
+.info-panel::-webkit-scrollbar-track {
+    background: transparent;
+}

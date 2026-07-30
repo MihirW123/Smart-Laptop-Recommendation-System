@@ -1,0 +1,270 @@
+/* ===========================
+   Sidebar
+=========================== */
+
+.admin-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 250px;
+    height: 100vh;
+
+    padding: 25px 15px;
+
+    box-sizing: border-box;
+
+    z-index: 1200;
+
+    display: flex;
+    flex-direction: column;
+
+    background: rgba(15, 23, 42, 0.95);
+
+    backdrop-filter: blur(20px);
+
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+
+    transition: .35s ease;
+
+    color: white;
+}
+
+
+/* ===========================
+   Header
+=========================== */
+
+.admin-sidebar-header {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 5px 10px 30px;
+
+    width: 100%;
+
+    box-sizing: border-box;
+}
+
+
+/* ===========================
+   Mavix Logo
+=========================== */
+
+.admin-logo-image {
+    width: 48px !important;
+    height: 48px !important;
+
+    max-width: 48px !important;
+    max-height: 48px !important;
+
+    min-width: 48px;
+    min-height: 48px;
+
+    object-fit: contain;
+
+    display: block;
+
+    border-radius: 10px;
+
+    flex-shrink: 0;
+}
+
+
+/* ===========================
+   Mavix Text
+=========================== */
+
+.admin-logo-text {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 3px;
+
+    min-width: 0;
+}
+
+.admin-logo-text strong {
+    font-size: 19px;
+
+    font-weight: 700;
+
+    line-height: 1.1;
+}
+
+.admin-logo-text span {
+    font-size: 9px;
+
+    letter-spacing: 1.5px;
+
+    opacity: .55;
+
+    font-weight: 600;
+}
+
+
+/* ===========================
+   Menu
+=========================== */
+
+.admin-menu {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 6px;
+
+    flex: 1;
+}
+
+.menu-title {
+    font-size: 10px;
+
+    letter-spacing: 1.5px;
+
+    opacity: .4;
+
+    margin: 5px 12px 10px;
+}
+
+.admin-menu-item {
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 13px 14px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: transparent;
+
+    color: #CBD5E1;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    text-align: left;
+
+    transition: .25s ease;
+}
+
+.menu-icon {
+    width: 20px;
+
+    display: flex;
+
+    justify-content: center;
+
+    font-size: 16px;
+}
+
+.admin-menu-item:hover {
+    background: rgba(37, 99, 235, .15);
+
+    color: white;
+
+    transform: translateX(4px);
+}
+
+
+/* ===========================
+   Active
+=========================== */
+
+.admin-menu-item:first-of-type {
+    background: #2563EB;
+
+    color: white;
+
+    box-shadow: 0 6px 18px rgba(37, 99, 235, .25);
+}
+
+.admin-menu-item:first-of-type:hover {
+    background: #1D4ED8;
+}
+
+
+/* ===========================
+   Bottom
+=========================== */
+
+.admin-sidebar-bottom {
+    padding-top: 15px;
+
+    border-top: 1px solid rgba(255, 255, 255, .08);
+}
+
+.admin-menu-item.logout {
+    color: #CBD5E1;
+}
+
+.admin-menu-item.logout:hover {
+    background: rgba(239, 68, 68, .12);
+
+    color: #F87171;
+}
+
+
+/* ===========================
+   Mobile Toggle
+=========================== */
+
+.admin-sidebar-toggle {
+    display: none;
+
+    position: fixed;
+
+    top: 18px;
+    left: 18px;
+
+    width: 45px;
+    height: 45px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #2563EB;
+
+    color: white;
+
+    z-index: 1500;
+
+    cursor: pointer;
+
+    font-size: 18px;
+}
+
+
+/* ===========================
+   Responsive
+=========================== */
+
+@media (max-width: 900px) {
+
+    .admin-sidebar {
+        left: -270px;
+    }
+
+    .admin-sidebar.open {
+        left: 0;
+    }
+
+    .admin-sidebar-toggle {
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+    }
+}

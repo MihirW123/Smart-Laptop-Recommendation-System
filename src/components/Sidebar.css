@@ -1,0 +1,133 @@
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -300px;
+
+    width: 280px;
+    height: 100vh;
+
+        padding: 25px;
+
+        transition: left .35s ease, background .3s ease;
+
+        z-index: 5000;
+    }
+
+    .sidebar.open {
+        left: 0;
+    }
+
+/* ==========================
+   Dark Theme
+========================== */
+
+.sidebar.dark {
+    background: rgba(255, 255, 255, .22);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    border-right: 1px solid rgba(255, 255, 255, .12);
+}
+
+.sidebar.dark h2 {
+    color: white;
+}
+
+.sidebar.dark li {
+    color: #E5E7EB;
+}
+
+.sidebar.dark li:hover {
+    background: rgba(255, 255, 255, .15);
+    color: white;
+}
+
+.sidebar.dark li.active {
+    background: #2563EB;
+    color: white;
+}
+
+.sidebar.dark .close-btn {
+    color: white;
+}
+
+/* ==========================
+   Light Theme
+========================== */
+
+.sidebar.light {
+    background: rgba(255, 255, 255, .85);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    border-right: 1px solid rgba(0, 0, 0, .08);
+}
+
+.sidebar.light h2 {
+    color: #111827;
+}
+
+.sidebar.light li {
+    color: #374151;
+}
+
+.sidebar.light li:hover {
+    background: rgba(37, 99, 235, .12);
+    color: #2563EB;
+}
+
+.sidebar.light li.active {
+    background: #2563EB;
+    color: white;
+}
+
+.sidebar.light .close-btn {
+    color: #111827;
+}
+
+/* ==========================
+   Common Styles
+========================== */
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 15px;
+    margin-bottom: 10px;
+
+    border-radius: 10px;
+    cursor: pointer;
+
+    transition: all .25s ease;
+}
+
+.close-btn {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+
+    border: none;
+    background: transparent;
+
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.sidebar.dark .close-btn {
+    color: white;
+}
+
+.sidebar.light .close-btn {
+    color: #111827;
+}
+.sidebar li.active {
+    background: #2563EB;
+    color: white;
+}

@@ -1,0 +1,105 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    height: 80px;
+    padding: 0 20px;
+    z-index: 1000;
+}
+.navbar.dark{
+    background: rgba(255, 255, 255, .22);
+}
+.navbar.light{
+    background: rgba(255, 255, 255, .85);
+}
+
+/* Light Theme */
+.navbar.light .nav-links a {
+    color: #374151;
+}
+
+.navbar.light .nav-links a:hover {
+    color: #2563EB;
+}
+
+/* Dark Theme */
+.navbar.dark .nav-links a {
+    color: #E5E7EB;
+}
+
+.navbar.dark .nav-links a:hover {
+    color: #60A5FA;
+}
+
+
+.nav-links {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    list-style: none;
+    margin-left: 900px;
+    
+}
+.profile {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    
+}
+.navbar.dark .profile{
+    color: white;
+
+}
+.navbar.light .profile{
+    color:#374151;
+}
+.logo {
+
+    width: 20px;
+
+    height: 20px;
+
+    object-fit: contain;
+
+    margin: 0 auto;
+
+    display: block;
+
+    margin-bottom: 0px;
+
+    transition: .4s ease;
+}
+
+.logo:hover {
+
+    transform: scale(1.2);
+
+    filter: drop-shadow(0 0 15px #3B82F6);
+}
+.guide-link {
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.navbar.light .guide-link {
+    color: #374151;
+}
+
+.navbar.light .guide-link:hover {
+    color: #2563EB;
+}
+
+.navbar.dark .guide-link {
+    color: #E5E7EB;
+}
+
+.navbar.dark .guide-link:hover {
+    color: #60A5FA;
+}

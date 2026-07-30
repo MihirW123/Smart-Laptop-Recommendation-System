@@ -1,0 +1,509 @@
+/* ===========================
+   Global
+=========================== */
+
+.otp-container {
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+
+    overflow: hidden;
+
+    transition: all .4s ease;
+}
+
+
+/* ===========================
+   Dark Theme
+=========================== */
+
+.otp-container.dark {
+    background: linear-gradient(135deg,
+            #050816,
+            #0F172A,
+            #1E3A8A);
+}
+
+
+/* ===========================
+   Light Theme
+=========================== */
+
+.otp-container.light {
+    background: linear-gradient(135deg,
+            #F8FAFC,
+            #E0F2FE,
+            #BFDBFE);
+}
+
+
+/* ===========================
+   OTP Card
+=========================== */
+
+.otp-card {
+
+    width: 430px;
+
+    padding: 40px;
+
+    border-radius: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 18px;
+
+    position: relative;
+
+    z-index: 100;
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    border: 1px solid rgba(255,
+            255,
+            255,
+            .18);
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, .35),
+        0 0 30px rgba(37,
+            99,
+            235,
+            .15);
+
+    animation: otpFadeIn .7s ease;
+}
+
+
+/* ===========================
+   Dark Card
+=========================== */
+
+.otp-container.dark .otp-card {
+
+    background:
+        rgba(255,
+            255,
+            255,
+            .16);
+
+    color: white;
+}
+
+
+/* ===========================
+   Light Card
+=========================== */
+
+.otp-container.light .otp-card {
+
+    background:
+        rgba(255,
+            255,
+            255,
+            .85);
+
+    color: #0F172A;
+}
+
+
+/* ===========================
+   Logo
+=========================== */
+
+.otp-logo {
+
+    width: 75px;
+    height: 75px;
+
+    object-fit: contain;
+
+    margin-bottom: 5px;
+
+    transition: .4s ease;
+}
+
+.otp-logo:hover {
+
+    transform:
+        rotate3d(0,
+            1,
+            0,
+            180deg) scale(1.1);
+
+    filter:
+        drop-shadow(0 0 15px #3B82F6);
+}
+
+
+/* ===========================
+   Heading
+=========================== */
+
+.otp-card h2 {
+
+    font-size: 28px;
+
+    text-align: center;
+
+    margin: 0;
+}
+
+
+/* ===========================
+   Subtitle
+=========================== */
+
+.otp-subtitle {
+
+    text-align: center;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    margin-bottom: 5px;
+}
+
+.otp-container.dark .otp-subtitle {
+
+    color: #CBD5E1;
+}
+
+.otp-container.light .otp-subtitle {
+
+    color: #475569;
+}
+
+.otp-subtitle strong {
+
+    color: #3B82F6;
+
+    word-break: break-word;
+}
+
+
+/* ===========================
+   OTP Inputs
+=========================== */
+
+.otp-input-container {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    margin: 10px 0;
+}
+
+
+.otp-input {
+
+    width: 48px;
+    height: 55px;
+
+    text-align: center;
+
+    font-size: 23px;
+
+    font-weight: 600;
+
+    border-radius: 10px;
+
+    outline: none;
+
+    border: 1px solid #64748B;
+
+    transition: .25s ease;
+}
+
+
+.otp-container.dark .otp-input {
+
+    background:
+        rgba(255,
+            255,
+            255,
+            .75);
+
+    color: #0F172A;
+}
+
+
+.otp-container.light .otp-input {
+
+    background: white;
+
+    color: #0F172A;
+}
+
+
+.otp-input:focus {
+
+    border-color: #2563EB;
+
+    box-shadow:
+        0 0 12px rgba(37,
+            99,
+            235,
+            .45);
+
+    transform: translateY(-2px);
+}
+
+
+/* ===========================
+   Verify Button
+=========================== */
+
+.verify-btn {
+
+    width: 100%;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background:
+        linear-gradient(135deg,
+            #25DBEB,
+            #1D4ED8);
+
+    color: white;
+
+    font-size: 17px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: .3s ease;
+}
+
+
+.verify-btn:hover {
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 8px 20px rgba(37,
+            99,
+            235,
+            .35);
+}
+
+
+/* ===========================
+   Resend
+=========================== */
+
+.resend-section {
+
+    text-align: center;
+
+    font-size: 14px;
+}
+
+
+.otp-container.dark .resend-section {
+
+    color: #CBD5E1;
+}
+
+
+.otp-container.light .resend-section {
+
+    color: #475569;
+}
+
+
+.resend-btn {
+
+    border: none;
+
+    background: none;
+
+    color: #3B82F6;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+
+.resend-btn:hover {
+
+    text-decoration: underline;
+
+    color: #1D4ED8;
+}
+
+
+/* ===========================
+   Messages
+=========================== */
+
+.otp-error {
+
+    color: #EF4444;
+
+    font-size: 13px;
+
+    margin: -5px 0;
+}
+
+
+.otp-success {
+
+    color: #22C55E;
+
+    font-size: 13px;
+
+    margin: -5px 0;
+}
+
+
+/* ===========================
+   Back Button
+=========================== */
+
+.back-login {
+
+    border: none;
+
+    background: transparent;
+
+    color: #60A5FA;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    transition: .25s ease;
+}
+
+
+.back-login:hover {
+
+    color: #2563EB;
+
+    transform:
+        translateX(-3px);
+}
+
+
+/* ===========================
+   Background Icons
+=========================== */
+
+.otp-container .background-icons {
+
+    position: absolute;
+
+    inset: 0;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+
+.otp-container .bg-icon {
+
+    position: absolute;
+
+    color: #3B82F6;
+
+    filter:
+        drop-shadow(0 0 6px #2563EB);
+
+    animation:
+        otpDiagonalMove linear infinite;
+}
+
+
+@keyframes otpDiagonalMove {
+
+    0% {
+
+        transform:
+            translate(-200px,
+                200px) rotate(0deg);
+    }
+
+    100% {
+
+        transform:
+            translate(120vw,
+                -120vh) rotate(360deg);
+    }
+}
+
+
+/* ===========================
+   Card Animation
+=========================== */
+
+@keyframes otpFadeIn {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(30px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/* ===========================
+   Responsive
+=========================== */
+
+@media (max-width: 500px) {
+
+    .otp-card {
+
+        width: 90%;
+
+        padding: 30px 20px;
+    }
+
+    .otp-input-container {
+
+        gap: 6px;
+    }
+
+    .otp-input {
+
+        width: 42px;
+        height: 50px;
+
+        font-size: 20px;
+    }
+}
