@@ -499,3 +499,43 @@ body {
         font-size: 26px;
     }
 }
+.password-rules {
+    margin-top: 10px;
+    margin-bottom: 18px;
+
+    text-align: left;
+}
+
+.password-rules p {
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.rule {
+    font-size: 12px;
+    margin: 5px 0;
+    color: #94A3B8;
+    transition: .3s ease;
+}
+
+.rule.valid {
+    color: #22C55E;
+    font-weight: 600;
+}
+
+.container.dark .rule {
+    color: #CBD5E1;
+}
+
+.container.dark .rule.valid {
+    color: #22C55E;
+}
+
+.container.light .rule {
+    color: #64748B;
+}
+
+.container.light .rule.valid {
+    color: #16A34A;
+}

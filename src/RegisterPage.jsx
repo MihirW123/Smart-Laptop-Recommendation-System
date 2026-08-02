@@ -33,7 +33,11 @@ function RegisterPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-
+  const hasMinLength = password.length >= 8;
+const hasUpperCase = /[A-Z]/.test(password);
+const hasLowerCase = /[a-z]/.test(password);
+const hasNumber = /[0-9]/.test(password);
+const hasSpecialChar = /[!@#$%^&*(),.?":{}|<>]/.test(password);
   const { darkMode, toggleTheme } = useTheme();
 
 
@@ -57,11 +61,18 @@ function RegisterPage() {
       return;
     }
 
-    if (password.length < 8 || password.length > 12) {
-      alert("Password must be between 8 and 12 characters.");
-      return;
-    }
-
+  if (
+  !hasMinLength ||
+  !hasUpperCase ||
+  !hasLowerCase ||
+  !hasNumber ||
+  !hasSpecialChar
+) {
+  alert(
+    "Password must contain at least 8 characters, one uppercase letter, one lowercase letter, one number and one special character."
+  );
+  return;
+}
 
     /*
       TEMPORARY OTP FLOW
@@ -275,7 +286,31 @@ function RegisterPage() {
             </span>
 
           </div>
+<div className="password-rules">
 
+  <p>Password Requirements</p>
+
+  <div className={hasMinLength ? "rule valid" : "rule"}>
+    {hasMinLength ? "✓" : "○"} At least 8 characters
+  </div>
+
+  <div className={hasUpperCase ? "rule valid" : "rule"}>
+    {hasUpperCase ? "✓" : "○"} One uppercase letter (A-Z)
+  </div>
+
+  <div className={hasLowerCase ? "rule valid" : "rule"}>
+    {hasLowerCase ? "✓" : "○"} One lowercase letter (a-z)
+  </div>
+
+  <div className={hasNumber ? "rule valid" : "rule"}>
+    {hasNumber ? "✓" : "○"} One number (0-9)
+  </div>
+
+  <div className={hasSpecialChar ? "rule valid" : "rule"}>
+    {hasSpecialChar ? "✓" : "○"} One special character (!@#$%^&*)
+  </div>
+
+</div>
 
           {/* ===========================
               Confirm Password

@@ -28,6 +28,14 @@ function Dashboard() {
 
   const [isSidebarOpen, setSidebarOpen] = useState(false);
 const [selectedTopic, setSelectedTopic] = useState(null);
+const toggleSidebar = () => {
+  if (isSidebarOpen) {
+    setSidebarOpen(false);
+    setSelectedTopic(null);
+  } else {
+    setSidebarOpen(true);
+  }
+};
 
   const iconComponents = [
     FaLaptop,
@@ -71,7 +79,7 @@ const [selectedTopic, setSelectedTopic] = useState(null);
   selectedTopic={selectedTopic}
   setSelectedTopic={setSelectedTopic}
 />
-{isSidebarOpen && (
+{isSidebarOpen && selectedTopic && (
   <LaptopInfo item={laptopGuide[selectedTopic]} />
 )}
       <CustomCursor />
@@ -101,7 +109,7 @@ const [selectedTopic, setSelectedTopic] = useState(null);
           })}
         </div>
 
-        <Navbar openSidebar={() => setSidebarOpen(true)} />
+    <Navbar openSidebar={toggleSidebar} />
 
         <div className="dashboard-content">
           <h1>Find Your Perfect Laptop</h1>
